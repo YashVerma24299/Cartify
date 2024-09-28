@@ -18,12 +18,15 @@ const PORT =process.env.PORT || 5000;
 app.use(express.json());
 app.use(cookieParser());
 
+// fetching the route
 app.use("/api/auth", authRoutes);   
 app.use("/api/products", productRoutes);  
 app.use("/api/cart", cartRoutes);  
 app.use("/api/coupons", couponRoutes);  
 app.use("/api/payments", paymentRoutes);
 
+
+// intialize the local host
 app.listen(PORT, ()=>{
     console.log("Server is running on port http://localhost:" + PORT);
 
