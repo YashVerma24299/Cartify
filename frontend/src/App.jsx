@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "./pages/LoginPage";
 
 import Navbar from "./components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+  
   return (
     <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
       {/* Background gradient */}
@@ -15,14 +17,15 @@ function App() {
 				</div>
 			</div>
 
-      <div className="relative z-50">
+      <div className="relative z-50 pt-20">
         <Navbar />
         <Routes>
-          <Route path='/'element={<HomePage />} />
-          <Route path='/signup'element={<SignUpPage />} />
-          <Route path='/login'element={<LoginPage />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/signup' element={<SignUpPage />} />
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
       </div>
+      <Toaster />
     </div>
   );
 };
