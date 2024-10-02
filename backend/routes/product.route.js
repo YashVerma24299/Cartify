@@ -4,7 +4,7 @@ import {
     createProduct,
     getAllProducts,
     getFeaturedProducts, 
-    getProductsByCategory, 
+    getProductsByCategory,   
     getRecommendedProducts,
     toggleFeaturedProduct,
 } from "../controllers/product.controller.js";
