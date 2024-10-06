@@ -25,7 +25,9 @@ export const createCheckoutSession = async (req, res) => {
 					},
 					unit_amount: amount,
 				},
-				//quantity: product.quantity || 1,
+				////
+				quantity: product.quantity || 1,
+				////
 			};
 		});
 
@@ -125,10 +127,10 @@ async function createStripeCoupon(discountPercentage) {
 	});
 
 	return coupon.id;
-};
+}
 
 async function createNewCoupon(userId) {
-	// await Coupon.findOneAndDelete({ userId });
+	await Coupon.findOneAndDelete({ userId });
 
 	const newCoupon = new Coupon({
 		code: "GIFT" + Math.random().toString(36).substring(2, 8).toUpperCase(),
@@ -140,4 +142,4 @@ async function createNewCoupon(userId) {
 	await newCoupon.save();
 
 	return newCoupon;
-};
+}
